@@ -39,7 +39,6 @@ class ProjectController extends Controller
     {
         // $data = $request->all();
         $data = $request->validated();
-
         //controlliamo se esiste il file cover_img nel request
         if ($request->hasFile('cover_img')) {
             //salvo file nella cartella storage
@@ -51,6 +50,7 @@ class ProjectController extends Controller
         $project = new Project();
         $project->fill($data);
         $project->slug = Str::slug($request->title);
+        // dd($request->all(), $data, $project);
         $project->save();
         return redirect()->route('admin.project.show', ['project' => $project->slug]);
     }

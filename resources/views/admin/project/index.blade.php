@@ -17,9 +17,9 @@
 
             <label class="form-label" for="per_page">Elementi per pagina</label>
             <select class="form-select" name="per_page" id="per_page">
-                <option value="5" @selected($projectArray->perPage() === '5')>5</option>
-                <option value="10" @selected($projectArray->perPage() === '10')>10</option>
-                <option value="15" @selected($projectArray->perPage() === '15')>15</option>
+                <option value="5" @selected($projectArray->perPage() == '5')>5</option>
+                <option value="10" @selected($projectArray->perPage() == '10')>10</option>
+                <option value="15" @selected($projectArray->perPage() == '15')>15</option>
             </select>
         </form>
 
