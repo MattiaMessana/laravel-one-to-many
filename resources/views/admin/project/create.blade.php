@@ -21,6 +21,16 @@
                     </div>
                 @enderror
             </div>
+            
+            <div class="my-3">
+                <label class="form-label" for="category_id">Categoria</label>
+                <select class="form-select" name="category_id" id="category_id">
+                    <option value="">Seleziona</option>
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="my-3">
                 <label for="description" class="form-label">Descrizione</label>

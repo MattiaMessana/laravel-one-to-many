@@ -23,6 +23,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => ['required', 'min:3', 'unique:projects'],
+            'category' => ['nullable', 'exists:categories,id'],
             'description' => ['required', 'min:10'],
         ];
     }
